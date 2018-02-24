@@ -3,7 +3,7 @@
 Implementation of Learning Deep Features for Discriminative Localization([arxiv](https://arxiv.org/pdf/1512.04150.pdf))
 
 I used custom model with Global Average Pooling and Convolution(No FC).
-It was trained by using STL10 about 5000 images with 10 classes. To visualize much bigger image, I upsampled the data to 128x128(orginally 96x96). The model will be saved in model folder.
+It was trained by using STL10 about 5000 images with 10 classes. To visualize much bigger image, I upsampled the data to 128x128(orginally 96x96). The model will be saved in 'model' folder.
 
 
 ## Results
@@ -20,7 +20,7 @@ To train a model
 python train.py
 ```
 
-if you want to use custom dataset, change code in utils.py or train.py
+if you want to use custom dataset, change codes in utils.py or train.py
 
 To create CAM(it needs saved model)
 ```bash
@@ -29,7 +29,7 @@ python create_cam.py
 
 it will generate CAM only randomly chosen one in the test dataset of STL10. if you want to create more than one, change codes in create_cam.py
 
-## Defendency
+## Dependency
 
 Need opencv-python(cv2) and pytorch
 ```bash
