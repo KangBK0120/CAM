@@ -1,7 +1,9 @@
 # CAM
 
 ## Log
-2018/05/24 Fix some errors in the codes, and try to reflex pytorch 0.4.0
+```
+2018/05/24 Fix some errors in the codes, and try to reflect pytorch 0.4.0
+```
 
 Implementation of Learning Deep Features for Discriminative Localization([arxiv](https://arxiv.org/pdf/1512.04150.pdf))
 
