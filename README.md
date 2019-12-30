@@ -2,6 +2,13 @@
 
 Implementation of Learning Deep Features for Discriminative Localization([arxiv](https://arxiv.org/pdf/1512.04150.pdf))
 
+![test1](https://user-images.githubusercontent.com/25279765/36484699-7928832c-175d-11e8-9c8c-ac166404ce64.jpg) ![cam1](https://user-images.githubusercontent.com/25279765/36484700-7958af98-175d-11e8-80ce-7d8a6239308c.jpg)
+
+![test2](https://user-images.githubusercontent.com/25279765/36484702-7b559ef0-175d-11e8-9359-4727cd4cadd9.jpg) ![cam2](https://user-images.githubusercontent.com/25279765/36484704-7b88e27e-175d-11e8-8032-95654cb1e051.jpg)
+
+![test3](https://user-images.githubusercontent.com/25279765/36484707-7cda1332-175d-11e8-82a0-711c86a6a454.jpg) ![cam3](https://user-images.githubusercontent.com/25279765/36484708-7d05851c-175d-11e8-8141-ff4e23958c44.jpg)
+
+
 ## Dependency
 
 Need opencv-python(cv2) and pytorch
@@ -66,13 +73,6 @@ If you use STL10 or CIFAR10, it will download the dataset at the path.
 - `--img_size` : The size of images to save
 
 - `--num_result` : The number of result to create. It will be randomly chosen from the test dataset.
-
-## Results
-![test1](https://user-images.githubusercontent.com/25279765/36484699-7928832c-175d-11e8-9c8c-ac166404ce64.jpg) ![cam1](https://user-images.githubusercontent.com/25279765/36484700-7958af98-175d-11e8-80ce-7d8a6239308c.jpg)
-
-![test2](https://user-images.githubusercontent.com/25279765/36484702-7b559ef0-175d-11e8-9359-4727cd4cadd9.jpg) ![cam2](https://user-images.githubusercontent.com/25279765/36484704-7b88e27e-175d-11e8-8032-95654cb1e051.jpg)
-
-![test3](https://user-images.githubusercontent.com/25279765/36484707-7cda1332-175d-11e8-82a0-711c86a6a454.jpg) ![cam3](https://user-images.githubusercontent.com/25279765/36484708-7d05851c-175d-11e8-8141-ff4e23958c44.jpg)
 
 ## Reference
 
