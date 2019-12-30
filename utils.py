@@ -1,27 +1,30 @@
-"""
-utils
-"""
 import torch
 import torchvision.datasets as dsets
 import torchvision.transforms as transforms
 
-transform = transforms.Compose([
-    transforms.Resize(128),
-    transforms.ToTensor(),
-])
-
-
-def load_data_stl10(batch_size=64, test=False):
-    if not test:
-        train_dset = dsets.STL10(root='./data', split='train', transform=transform, download=True)
+def get_trainloader(dset_name, path, img_size, batch_size):
+    transform = transforms.Compose([
+        transforms.Resize(img_size),
+        transforms.ToTensor(),
+    ])
+    if dset_name == "STL":
+        dataset = dsets.STL10(root=path, split='train', transform=transform, download=True)
+    elif dset_name == "CIFAR":
+        dataset = dsets.CIFAR10(root=path, train=True, transform=transform, download=True)
     else:
-        train_dset = dsets.STL10(root='./data', split='test', transform=transform, download=True)
-    train_loader = torch.utils.data.DataLoader(train_dset, batch_size=batch_size, shuffle=True)
-    print("LOAD DATA, %d" % (len(train_loader)))
-    return train_loader
+        dataset = dsets.ImageFolder(root=path, transform=transform)
+    return torch.utils.data.DataLoader(dataset, batch_size=batch_size, shuffle=True), len(dataset.classes)
 
-def load_data_cifar(batch_size=64):
-    train_dset = dsets.CIFAR10(root='./data', train=True, transform=transform, download=True)
-    train_loader = torch.utils.data.DataLoader(train_dset, batch_size=batch_size, shuffle=True)
-    print("LOAD DATA, %d" % len(train_loader))
-    return train_loader
+def get_testloader(dset_name, path, img_size, batch_size=1):
+    transform = transforms.Compose([
+        transforms.Resize(img_size),
+        transforms.ToTensor(),
+    ])
+    if dset_name == "STL":
+        dataset = dsets.STL10(root=path, split='test', transform=transform, download=True)
+    elif dset_name == "CIFAR":
+        dataset = dsets.CIFAR10(root=path, train=False, transform=transform, download=True)
+    else:
+        dataset = dsets.ImageFolder(root=path, transform=transform)
+    return torch.utils.data.DataLoader(dataset, batch_size=batch_size, shuffle=True), len(dataset.classes)
+    
